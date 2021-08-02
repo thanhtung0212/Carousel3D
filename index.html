@@ -1,196 +1,200 @@
 <html>
-
-<head>
+  <head>
     <title>carousel 3D</title>
-</head>
-<style type="text/css">
+  </head>
+  <style type="text/css">
     html,
     body {
-        background-color: #1a948d;
+      background-color: #1a948d;
     }
 
     body {
-        background-repeat: no-repeat;
-        background-position: top center;
-        width: 100%;
-        background-size: cover;
-        height: 100%;
-        min-height: 1000px;
-        overflow: hidden;
-        font-family: 'quicksandlight', Helvetica, Arial;
-        color: #FFFFFF;
-        text-shadow: -1px -1px 4px rgba(0, 0, 0, .35);
-        filter: dropshadow(color=#000000, offx=1, offy=1);
+      background-repeat: no-repeat;
+      background-position: top center;
+      width: 100%;
+      background-size: cover;
+      height: 100%;
+      min-height: 1000px;
+      overflow: hidden;
+      font-family: "quicksandlight", Helvetica, Arial;
+      color: #ffffff;
+      text-shadow: -1px -1px 4px rgba(0, 0, 0, 0.35);
+      filter: dropshadow(color=#000000, offx=1, offy=1);
     }
 
     header {
-
-        margin-top: 30px;
-        position: absolute;
-        z-index: 5;
-        width: 420px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-
+      margin-top: 30px;
+      position: absolute;
+      z-index: 5;
+      width: 420px;
+      padding-top: 10px;
+      padding-bottom: 10px;
     }
 
     h1 {
-
-        font-size: 36px;
-        letter-spacing: -2.5px;
-        margin-left: 30px;
+      font-size: 36px;
+      letter-spacing: -2.5px;
+      margin-left: 30px;
     }
 
     h3 {
-
-        font-size: 16px;
-        letter-spacing: -1.5px;
-        margin-top: 5px;
-        margin-left: 35px;
+      font-size: 16px;
+      letter-spacing: -1.5px;
+      margin-top: 5px;
+      margin-left: 35px;
     }
 
     #fps {
-        margin-top: 5px;
-        margin-left: 35px;
+      margin-top: 5px;
+      margin-left: 35px;
     }
 
     a {
-        color: rgba(255, 255, 255, .65);
-        text-decoration: none;
+      color: rgba(255, 255, 255, 0.65);
+      text-decoration: none;
     }
 
     a:hover {
-        color: rgba(255, 255, 255, 1);
+      color: rgba(255, 255, 255, 1);
     }
 
     /* hardware accelatator class */
     .trans3d {
-        -webkit-transform-style: preserve-3d;
-        -webkit-transform: translate3d(0, 0, 0);
-        -moz-transform-style: preserve-3d;
-        -moz-transform: translate3d(0, 0, 0);
-        -ms-transform-style: preserve-3d;
-        -ms-transform: translate3d(0, 0, 0);
-        transform-style: preserve-3d;
-        transform: translate3d(0, 0, 0);
+      -webkit-transform-style: preserve-3d;
+      -webkit-transform: translate3d(0, 0, 0);
+      -moz-transform-style: preserve-3d;
+      -moz-transform: translate3d(0, 0, 0);
+      -ms-transform-style: preserve-3d;
+      -ms-transform: translate3d(0, 0, 0);
+      transform-style: preserve-3d;
+      transform: translate3d(0, 0, 0);
 
-        /*-webkit-backface-visibility: hidden;
+      /*-webkit-backface-visibility: hidden;
 		-moz-backface-visibility: hidden;
 		-ms-backface-visibility:hidden;
 		backface-visibility:hidden;*/
     }
 
     #contentContainer {
-        position: absolute;
-        margin-left: -500px;
-        margin-top: -500px;
-        left: 50%;
-        top: 50%;
-        width: 1000px;
-        height: 1000px;
+      position: absolute;
+      margin-left: -500px;
+      margin-top: -500px;
+      left: 50%;
+      top: 50%;
+      width: 1000px;
+      height: 1000px;
     }
 
     #carouselContainer {
-        position: absolute;
-        margin-left: -500px;
-        margin-top: -500px;
-        left: 50%;
-        top: 50%;
-        width: 1000px;
-        height: 1000px;
+      position: absolute;
+      margin-left: -500px;
+      margin-top: -500px;
+      left: 50%;
+      top: 50%;
+      width: 1000px;
+      height: 1000px;
     }
 
     .carouselItem {
-        width: 320px;
-        height: 130px;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        margin-left: -160px;
-        margin-top: -90px;
-        visibility: hidden;
+      width: 320px;
+      height: 130px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -160px;
+      margin-top: -90px;
+      visibility: hidden;
     }
 
-    .carouselItem>img {
-        width: 250px;
-        height: auto;
+    .carouselItem > img {
+      width: 250px;
+      height: auto;
     }
 
-    .hai>img {
-        width: 450px;
+    .hai > img {
+      width: 450px;
     }
 
     .carouselItemInner {
-        width: 320px;
-        height: 130px;
-        position: absolute;
-        background-color: rgba(255, 255, 255, .75);
-        border: 10px solid rgba(255, 255, 255, .5);
-        color: aqua;
-        font-size: 72px;
-        left: 50%;
-        top: 50%;
-        margin-left: -160px;
-        margin-top: -90px;
-        text-align: center;
-        padding-top: 50px;
-
+      width: 320px;
+      height: 130px;
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.75);
+      border: 10px solid rgba(255, 255, 255, 0.5);
+      color: aqua;
+      font-size: 72px;
+      left: 50%;
+      top: 50%;
+      margin-left: -160px;
+      margin-top: -90px;
+      text-align: center;
+      padding-top: 50px;
     }
-</style>
+  </style>
 
-<body>
+  <body>
     <header>
-        <h1>3D Carousel Using TweenMax.js & jQuery</h1>
-        <h3>A pen by <a href="#" target="_blank">@SUOT00</a></h3>
-        <div id="fps">Framerate: 0/60 FPS</div>
+      <!-- <h1>3D Carousel Using TweenMax.js & jQuery</h1> -->
+      <h3>A pen by <a href="#" target="_blank">@thanhtungnguyen0212</a></h3>
+      <div id="fps">Framerate: 0/60 FPS</div>
     </header>
 
     <div id="contentContainer" class="trans3d">
-        <section id="carouselContainer" class="trans3d">
-            <figure id="item1" class="carouselItem trans3d">
-                <!-- <div class="carouselItemInner trans3d">1</div> -->
-                <img src="https://scontent.fsgn5-3.fna.fbcdn.net/v/t1.0-9/55606176_2326163390963829_3088483361618919424_n.jpg?_nc_cat=111&_nc_eui2=AeHaKnmrGxy1kSwrc2K3s27ywaYEJiBn9TTCQb0eYM9iPNk4VaC4g9vZpw9eRiX81Nt_i5WpHFgvhB-epAjoX8WdBU7pjOUi1yDE4mxhkpP1vg&_nc_oc=AQnccRvepadUrGVl172MSUry1mEOV9ndPFxD1EIDDsktavTDod_mdFlKXncmAGY-VMeKldPMrSmPV0hzQYKD871H&_nc_ht=scontent.fsgn5-3.fna&oh=f16fbc9e7557503ed698bb877ccfd5e2&oe=5D7E28ED"
-                    alt="sam nhu">
-            </figure>
-            <figure id="item2" class="carouselItem trans3d">
-                <!-- <div class="carouselItemInner trans3d">2</div> -->
-                <img src="https://scontent.fsgn5-7.fna.fbcdn.net/v/t1.0-1/c0.0.647.647a/65158551_1122977648089975_9108989653238677504_n.jpg?_nc_cat=101&_nc_eui2=AeHW-8648vCVUPFv6HJ5zGmX6TYDTQjaxe8xqjpVW3saEqdwfD-76Lk_7OHF6rkISKUW8RlmAQK4Y8itjXmSD6ZQ68EV6o4LWdPjRGYoyQhPeQ&_nc_oc=AQmV51azj6eGZE37uKssnZu8evHeFZ9uISAM4B8hAD7zdpehJIJmuricx1rV6VetmjvXd1NQAWcTbhjcUM2zvN0A&_nc_ht=scontent.fsgn5-7.fna&oh=ec4a7eaf765659dd73d2c204cdddc157&oe=5D78CB9D"
-                    alt="huyen trang">
-            </figure>
-            <figure id="item3" class="carouselItem trans3d">
-                <!-- <div class="carouselItemInner trans3d">3</div> -->
-                <img
-                    src="https://scontent.fsgn5-7.fna.fbcdn.net/v/t1.0-9/29250208_633959023612778_338072277620883456_n.jpg?_nc_cat=103&_nc_eui2=AeGFTLkNAgFgOJqAk7F56JZ8GQ_iHRr8M2JI1fhognR0NhLjPcwnBpJgr5SURXLFikJDpPyC8cCAt2Kn9k2NsR8rPG7WftP3_1pJuADmyypgFg&_nc_oc=AQnUDcjlyozzrSVrMsYicxSpOXqw5QSvHVmH0hyqhwY7RYgDNiC19Qdj0uZ1hKI8Q2ZwZ2vqqwPUY83aoTZjW8Ep&_nc_ht=scontent.fsgn5-7.fna&oh=23545f7b4dee60426b8bf09a8e10c2ce&oe=5DB039DD">
-            </figure>
-            <figure id="item4" class="carouselItem trans3d">
-                <!-- <div class="carouselItemInner trans3d">4</div> -->
-                <img
-                    src="https://scontent.fsgn5-6.fna.fbcdn.net/v/t1.0-9/66051561_178051486547905_5898511465018556416_n.jpg?_nc_cat=109&_nc_eui2=AeHZFRgc4bgkhB92QgGoxnWqEdTS-ZtjuOFRRm_f4r-eHV7gl4KhoLGyRvP95R-ZBeqcDtRZ0qgufPCK-gUyurSHxqiUWBR5fAUY_N5yEH9oSw&_nc_oc=AQnd4tMWKA51hCy3tkABt-NO8I7hgelnbLApK_GTC9r6xG6Cf5upJjUr02CMz3kTNqf0YyRcOVVJ_WZuk9lmkg5v&_nc_ht=scontent.fsgn5-6.fna&oh=acdb9fa3e067fbeddef2e59fb66dbed1&oe=5DB4D25F">
-            </figure>
-            <figure id="item5" class="carouselItem trans3d">
-                <!-- <div class="carouselItemInner trans3d">5</div> -->
-                <img
-                    src="https://scontent.fsgn5-2.fna.fbcdn.net/v/t1.0-9/62569904_843577092682924_3233008564452720640_n.jpg?_nc_cat=105&_nc_eui2=AeHGsarLepI4vGjDMNEEdHZxTygZLr6RmKzdlCH5YZc_pQGuiiZvR-J_afwL5na1uXqBHoL8BRSz3HU3cjUmwj4tmEVxpM8W7vsWe7zn3FUYkQ&_nc_oc=AQlGAXVVHiOCu4Qrf8yQsRf5q2FER-OSd9_myKfbbtVYAbV1-lkZlmE4s1fPwhE0_znDsUaGj20oS73-6qsr9uxS&_nc_ht=scontent.fsgn5-2.fna&oh=b8f04867b50868e5ba027015f1700d23&oe=5D7C950B">
-            </figure>
-            <figure id="item6" class="carouselItem trans3d">
-                <!-- <div class="carouselItemInner trans3d">6</div> -->
-                <img
-                    src="https://scontent.fsgn5-3.fna.fbcdn.net/v/t1.0-1/c0.0.718.718a/61993600_2076979702605451_457560054501998592_n.jpg?_nc_cat=110&_nc_eui2=AeF8Nk0-FrJuEZjW53aVbfYk5E2LfdabykN-x2Eun4KwsULqrBbyoqjVk9Uoy4Jp_jzUWyxbALE0Rpc7mjeEdhZe1tT_-mL0ltUmKlfubHEg5g&_nc_oc=AQkvdyhIDkyV82xmRBzKZ1xq5wwv93LqZepapa13ITDn9E_p8SO8cNqBXQbcTjBSaSYHbg4_lTgrWQnDl1lisOym&_nc_ht=scontent.fsgn5-3.fna&oh=0473bf9667c1d1e1c5b5023c41cc3da5&oe=5DC51FDC">
-            </figure>
-            <figure id="item7" class="carouselItem trans3d">
-                <!-- <div class="carouselItemInner trans3d">7</div> -->
-                <img
-                    src="https://scontent.fsgn5-2.fna.fbcdn.net/v/t1.0-9/45822759_1963629417273814_6873263793313415168_n.jpg?_nc_cat=105&_nc_eui2=AeETk1Qe5asvlyli4Ve9wdGAlBocIbWcqwlpZBp1QkgOMpTZTnaHkjQBosuWljFoUfasN_p7kghD7iMR6ydXU7YGuFslAkwjVoSY_JMzFjYAmw&_nc_oc=AQkokf48P5vCLFskA7sZgwOjr53U303erwGh8MLH7_NsmEqKRHiRNntT45-3xCv4xl1gD0ff5zlR6v0ZsEO5mU2L&_nc_ht=scontent.fsgn5-2.fna&oh=f5da513f5e6cc2856f3fb82a4bac6258&oe=5DB7FF4A">
-            </figure>
-            <figure id="item8" class="carouselItem trans3d hai">
-                <!-- <div class="carouselItemInner trans3d">8</div> -->
-                <img
-                    src="https://scontent.fsgn5-4.fna.fbcdn.net/v/t1.0-9/60082083_2304273886512863_7785776689665015808_n.jpg?_nc_cat=102&_nc_eui2=AeGumVjDa7IT1FZjNzjJV1Qg93DuJPiTEzCy3wsysFfR5imurgjB-Ic1KApPd2ebkqVU4Se5uLNN4TlPspAyaKhfiSMaAXZ-BYBNv6Jgo7DXfw&_nc_oc=AQkY1IdkiAzy2pmOaL6fwdDAJbRin_kv8Be4O5bu1oVY4QhqiJReCBMxgP_Wz834hvpZw_HBQtDNp9OQGP7vKSfo&_nc_ht=scontent.fsgn5-4.fna&oh=1ed6d6184bdfef4db6713bc5be9f054d&oe=5DB918A5">
-            </figure>
-            <!-- <figure id="item9" class="carouselItem trans3d">
+      <section id="carouselContainer" class="trans3d">
+        <figure id="item1" class="carouselItem trans3d">
+          <!-- <div class="carouselItemInner trans3d">1</div> -->
+          <img
+            src="https://scontent.fsgn6-1.fna.fbcdn.net/v/t1.6435-9/198420135_1478300279180629_2961278141227928306_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=34I39a3mNBcAX-ONPy6&_nc_ht=scontent.fsgn6-1.fna&oh=f574a43f2104c62259f02b9ccd234188&oe=612BCB90"
+            alt="PN"
+          />
+        </figure>
+        <figure id="item2" class="carouselItem trans3d">
+          <!-- <div class="carouselItemInner trans3d">2</div> -->
+          <img
+            src="https://scontent.fsgn6-2.fna.fbcdn.net/v/t1.6435-9/195845771_1478300309180626_3480115692876140373_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=Gv4rM5XVy3IAX-70Vc-&tn=BcNIEUISCRp_7Gfz&_nc_ht=scontent.fsgn6-2.fna&oh=0bfd9b3dff6f87da026516e1c67e09e6&oe=612BDDD9"
+            alt="PN"
+          />
+        </figure>
+        <figure id="item3" class="carouselItem trans3d">
+          <!-- <div class="carouselItemInner trans3d">3</div> -->
+          <img
+            src="https://scontent.fsgn6-2.fna.fbcdn.net/v/t1.6435-9/194425095_1478300242513966_6093322353113047470_n.jpg?_nc_cat=111&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=ZAPfUeOLW88AX9vRsNw&tn=BcNIEUISCRp_7Gfz&_nc_ht=scontent.fsgn6-2.fna&oh=92842314f1ce5b0b2b2c2694397eb6fb&oe=612D90FD"
+          />
+        </figure>
+        <figure id="item4" class="carouselItem trans3d">
+          <!-- <div class="carouselItemInner trans3d">4</div> -->
+          <img
+            src="https://scontent.fsgn6-2.fna.fbcdn.net/v/t1.6435-9/197838556_1478300192513971_362116538168282427_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=f8Gy3hwum0IAX8MCRAr&_nc_ht=scontent.fsgn6-2.fna&oh=34c581af08f49cb11709e36016ade65f&oe=612C05F1"
+          />
+        </figure>
+        <figure id="item5" class="carouselItem trans3d">
+          <!-- <div class="carouselItemInner trans3d">5</div> -->
+          <img
+            src="https://scontent.fsgn6-1.fna.fbcdn.net/v/t1.6435-9/129794621_1347527205591271_1891942570114114643_n.jpg?_nc_cat=103&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=SkXd4CdVHUQAX9IBGQR&tn=BcNIEUISCRp_7Gfz&_nc_ht=scontent.fsgn6-1.fna&oh=d2150338b8b93c957b9578754d9643f8&oe=612BEC34"
+          />
+        </figure>
+        <figure id="item6" class="carouselItem trans3d">
+          <!-- <div class="carouselItemInner trans3d">6</div> -->
+          <img
+            src="https://scontent.fsgn6-1.fna.fbcdn.net/v/t1.6435-9/130979849_1358408267836498_4597682820612090229_n.jpg?_nc_cat=106&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=r9BalJYu0scAX_EzFPg&_nc_ht=scontent.fsgn6-1.fna&oh=6f7650c13d2728518aafbed48113deaf&oe=612BBA3C"
+          />
+        </figure>
+        <figure id="item7" class="carouselItem trans3d">
+          <!-- <div class="carouselItemInner trans3d">7</div> -->
+          <img
+            src="https://scontent.fsgn6-1.fna.fbcdn.net/v/t1.6435-9/131983087_1358408297836495_8836678026172956923_n.jpg?_nc_cat=107&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=Sd_t061zujMAX-Au5_k&tn=BcNIEUISCRp_7Gfz&_nc_ht=scontent.fsgn6-1.fna&oh=c55033667566b6547be450813fac6202&oe=612E5428"
+          />
+        </figure>
+        <figure id="item8" class="carouselItem trans3d hai">
+          <!-- <div class="carouselItemInner trans3d">8</div> -->
+          <img
+            src="https://scontent.fsgn6-2.fna.fbcdn.net/v/t1.6435-9/171580509_1438338823176775_2384994483598660085_n.jpg?_nc_cat=108&ccb=1-3&_nc_sid=8bfeb9&_nc_ohc=-TzwffMTqL0AX87mrgl&tn=BcNIEUISCRp_7Gfz&_nc_ht=scontent.fsgn6-2.fna&oh=d3b215a398576c5a846cd93a4a5e0523&oe=612E8114"
+          />
+        </figure>
+        <!-- <figure id="item9" class="carouselItem trans3d">
                 <div class="carouselItemInner trans3d">9</div>
             </figure> -->
-            <!-- <figure id="item10" class="carouselItem trans3d">
+        <!-- <figure id="item10" class="carouselItem trans3d">
                 <div class="carouselItemInner trans3d">10</div>
             </figure>
             <figure id="item11" class="carouselItem trans3d">
@@ -199,112 +203,135 @@
             <figure id="item12" class="carouselItem trans3d">
                 <div class="carouselItemInner trans3d">12</div>
             </figure> -->
-        </section>
+      </section>
     </div>
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-<script type="text/javascript">
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+  <script type="text/javascript">
     // set and cache variables
-    var w, container, carousel, item, radius, itemLength, rY, ticker, fps;
-    var mouseX = 0;
-    var mouseY = 0;
-    var mouseZ = 0;
-    var addX = 0;
-
+    var w, container, carousel, item, radius, itemLength, rY, ticker, fps
+    var mouseX = 0
+    var mouseY = 0
+    var mouseZ = 0
+    var addX = 0
 
     // fps counter created by: https://gist.github.com/sharkbrainguy/1156092,
     // no need to create my own 🙂
     var fps_counter = {
+      tick: function () {
+        // this has to clone the array every tick so that
+        // separate instances won't share state
+        this.times = this.times.concat(+new Date())
+        var seconds,
+          times = this.times
 
-        tick: function () {
-            // this has to clone the array every tick so that
-            // separate instances won't share state 
-            this.times = this.times.concat(+new Date());
-            var seconds, times = this.times;
+        if (times.length > this.span + 1) {
+          times.shift() // ditch the oldest time
+          seconds = (times[times.length - 1] - times[0]) / 1000
+          return Math.round(this.span / seconds)
+        } else return null
+      },
 
-            if (times.length > this.span + 1) {
-                times.shift(); // ditch the oldest time
-                seconds = (times[times.length - 1] - times[0]) / 1000;
-                return Math.round(this.span / seconds);
-            }
-            else return null;
-        },
-
-        times: [],
-        span: 20
-    };
-    var counter = Object.create(fps_counter);
-
-
+      times: [],
+      span: 20
+    }
+    var counter = Object.create(fps_counter)
 
     $(document).ready(init)
 
     function init() {
-        w = $(window);
-        container = $('#contentContainer');
-        carousel = $('#carouselContainer');
-        item = $('.carouselItem');
-        itemLength = $('.carouselItem').length;
-        fps = $('#fps');
-        rY = 360 / itemLength;
-        radius = Math.round((250) / Math.tan(Math.PI / itemLength));
+      w = $(window)
+      container = $("#contentContainer")
+      carousel = $("#carouselContainer")
+      item = $(".carouselItem")
+      itemLength = $(".carouselItem").length
+      fps = $("#fps")
+      rY = 360 / itemLength
+      radius = Math.round(250 / Math.tan(Math.PI / itemLength))
 
-        // set container 3d props
-        TweenMax.set(container, { perspective: 600 })
-        TweenMax.set(carousel, { z: -(radius) })
+      // set container 3d props
+      TweenMax.set(container, { perspective: 600 })
+      TweenMax.set(carousel, { z: -radius })
 
-        // create carousel item props
+      // create carousel item props
 
-        for (var i = 0; i < itemLength; i++) {
-            var $item = item.eq(i);
-            var $block = $item.find('.carouselItemInner');
+      for (var i = 0; i < itemLength; i++) {
+        var $item = item.eq(i)
+        var $block = $item.find(".carouselItemInner")
 
-            //thanks @chrisgannon!        
-            TweenMax.set($item, { rotationY: rY * i, z: radius, transformOrigin: "50% 50% " + -radius + "px" });
+        //thanks @chrisgannon!
+        TweenMax.set($item, {
+          rotationY: rY * i,
+          z: radius,
+          transformOrigin: "50% 50% " + -radius + "px"
+        })
 
-            animateIn($item, $block)
-        }
+        animateIn($item, $block)
+      }
 
-        // set mouse x and y props and looper ticker
-        window.addEventListener("mousemove", onMouseMove, false);
-        ticker = setInterval(looper, 1000 / 60);
+      // set mouse x and y props and looper ticker
+      window.addEventListener("mousemove", onMouseMove, false)
+      ticker = setInterval(looper, 1000 / 60)
     }
 
     function animateIn($item, $block) {
-        var $nrX = 360 * getRandomInt(2);
-        var $nrY = 360 * getRandomInt(2);
+      var $nrX = 360 * getRandomInt(2)
+      var $nrY = 360 * getRandomInt(2)
 
-        var $nx = -(2000) + getRandomInt(4000)
-        var $ny = -(2000) + getRandomInt(4000)
-        var $nz = -4000 + getRandomInt(4000)
+      var $nx = -2000 + getRandomInt(4000)
+      var $ny = -2000 + getRandomInt(4000)
+      var $nz = -4000 + getRandomInt(4000)
 
-        var $s = 1.5 + (getRandomInt(10) * .1)
-        var $d = 1 - (getRandomInt(8) * .1)
+      var $s = 1.5 + getRandomInt(10) * 0.1
+      var $d = 1 - getRandomInt(8) * 0.1
 
-        TweenMax.set($item, { autoAlpha: 1, delay: $d })
-        TweenMax.set($block, { z: $nz, rotationY: $nrY, rotationX: $nrX, x: $nx, y: $ny, autoAlpha: 0 })
-        TweenMax.to($block, $s, { delay: $d, rotationY: 0, rotationX: 0, z: 0, ease: Expo.easeInOut })
-        TweenMax.to($block, $s - .5, { delay: $d, x: 0, y: 0, autoAlpha: 1, ease: Expo.easeInOut })
+      TweenMax.set($item, { autoAlpha: 1, delay: $d })
+      TweenMax.set($block, {
+        z: $nz,
+        rotationY: $nrY,
+        rotationX: $nrX,
+        x: $nx,
+        y: $ny,
+        autoAlpha: 0
+      })
+      TweenMax.to($block, $s, {
+        delay: $d,
+        rotationY: 0,
+        rotationX: 0,
+        z: 0,
+        ease: Expo.easeInOut
+      })
+      TweenMax.to($block, $s - 0.5, {
+        delay: $d,
+        x: 0,
+        y: 0,
+        autoAlpha: 1,
+        ease: Expo.easeInOut
+      })
     }
 
     function onMouseMove(event) {
-        mouseX = -(-(window.innerWidth * .5) + event.pageX) * .0025;
-        mouseY = -(-(window.innerHeight * .5) + event.pageY) * .01;
-        mouseZ = -(radius) - (Math.abs(-(window.innerHeight * .5) + event.pageY) - 200);
+      mouseX = -(-(window.innerWidth * 0.5) + event.pageX) * 0.0025
+      mouseY = -(-(window.innerHeight * 0.5) + event.pageY) * 0.01
+      mouseZ =
+        -radius - (Math.abs(-(window.innerHeight * 0.5) + event.pageY) - 200)
     }
 
     // loops and sets the carousel 3d properties
     function looper() {
-        addX += mouseX
-        TweenMax.to(carousel, 1, { rotationY: addX, rotationX: mouseY, ease: Quint.easeOut })
-        TweenMax.set(carousel, { z: mouseZ })
-        fps.text('Framerate: ' + counter.tick() + '/60 FPS')
+      addX += mouseX
+      TweenMax.to(carousel, 1, {
+        rotationY: addX,
+        rotationX: mouseY,
+        ease: Quint.easeOut
+      })
+      TweenMax.set(carousel, { z: mouseZ })
+      fps.text("Framerate: " + counter.tick() + "/60 FPS")
     }
 
     function getRandomInt($n) {
-        return Math.floor((Math.random() * $n) + 1);
+      return Math.floor(Math.random() * $n + 1)
     }
-</script>
-
+  </script>
 </html>
